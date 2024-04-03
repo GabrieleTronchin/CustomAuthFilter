@@ -1,0 +1,6 @@
+@Sample.With.ClassicAPI_HostAddress = http://localhost:5073
+
+GET {{Sample.With.ClassicAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
