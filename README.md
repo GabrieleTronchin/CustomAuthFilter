@@ -1,6 +1,6 @@
 # Authorization Filter
 
-This document illustrates the implementation of an Authorization filter in C#.NET, showcasing two ASP.NET API approaches: 
+This project illustrates the implementation of an Authorization filter in C#.NET, showcasing two ASP.NET API approaches: 
 - Classic API utilizing controllers
 - Minimal API.
 
