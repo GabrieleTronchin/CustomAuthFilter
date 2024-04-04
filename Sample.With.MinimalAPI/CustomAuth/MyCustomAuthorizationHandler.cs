@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-using Sample.Filters.MyCustomAuthorization;
+using Sample.Filters.CustomAuthService;
 
 namespace Sample.With.MinimalAPI.CustomAuth;
 

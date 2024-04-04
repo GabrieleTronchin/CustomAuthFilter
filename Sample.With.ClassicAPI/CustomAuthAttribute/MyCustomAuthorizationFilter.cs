@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.Extensions.DependencyInjection;
+using Sample.Filters.CustomAuthService;
 
-namespace Sample.Filters.MyCustomAuthorization;
+namespace Sample.With.ClassicAPI.CustomAuthAttribute;
 
 public class MyCustomAuthorizationFilter : Attribute, IAsyncAuthorizationFilter
 {

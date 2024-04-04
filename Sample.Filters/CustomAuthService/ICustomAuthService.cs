@@ -1,4 +1,4 @@
-﻿namespace Sample.Filters.MyCustomAuthorization;
+﻿namespace Sample.Filters.CustomAuthService;
 
 public interface ICustomAuthService
 {

@@ -1,5 +1,6 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
-using Sample.Filters.MyCustomAuthorization;
+using Sample.Filters.CustomAuthService;
 using Sample.With.MinimalAPI.CustomAuth;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +10,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+});
 
+builder.Services.AddTransient<ICustomAuthService, CustomAuthService>();
 builder.Services.AddAuthorization(o =>
 {
     o.AddPolicy("Test", p => p.AddRequirements(new MyCustomAuthRequirementInput("Test")));
@@ -28,6 +35,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+//app.UseAuthorization();
 
 var summaries = new[]
 {
