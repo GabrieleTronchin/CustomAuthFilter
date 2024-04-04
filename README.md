@@ -102,4 +102,4 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 .RequireAuthorization("Test")
 .WithOpenApi();
-```csharp
+```
