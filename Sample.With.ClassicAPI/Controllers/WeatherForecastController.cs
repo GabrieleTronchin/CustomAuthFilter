@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Sample.Filters.MyCustomAuthorization;
+using Sample.With.ClassicAPI.CustomAuthAttribute;
 
 
 namespace Sample.With.ClassicAPI.Controllers
