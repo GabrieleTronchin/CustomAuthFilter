@@ -1,9 +1,10 @@
 # Authorization Filter
 
+Authorization Filter in .NET are used to verify that a user is authorized to access a particular controller.
+
 This project illustrates the implementation of an Authorization filter in C#.NET, showcasing two ASP.NET API approaches: 
 - Classic API utilizing controllers
 - Minimal API.
-
 
 ## Moq CustomAuthService
 
