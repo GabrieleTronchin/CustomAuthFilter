@@ -3,12 +3,14 @@ using Sample.Filters.CustomAuthService;
 
 namespace Sample.With.MinimalAPI.CustomAuth;
 
-public class MyCustomAuthorizationHandler(ICustomAuthService customAuthService) : AuthorizationHandler<MyCustomAuthRequirementInput>
+public class MyCustomAuthorizationHandler(ICustomAuthService customAuthService)
+    : AuthorizationHandler<MyCustomAuthRequirementInput>
 {
-
-    protected override async Task HandleRequirementAsync(AuthorizationHandlerContext context, MyCustomAuthRequirementInput requirement)
+    protected override async Task HandleRequirementAsync(
+        AuthorizationHandlerContext context,
+        MyCustomAuthRequirementInput requirement
+    )
     {
-
         if (await customAuthService.CheckIfAllowed(requirement.Condition))
         {
             context.Succeed(requirement);
@@ -17,7 +19,5 @@ public class MyCustomAuthorizationHandler(ICustomAuthService customAuthService) 
         {
             context.Fail();
         }
-
     }
-
 }

@@ -15,7 +15,8 @@ public class MyCustomAuthorizationFilter : Attribute, IAsyncAuthorizationFilter
 
     public async Task OnAuthorizationAsync(AuthorizationFilterContext context)
     {
-        var myCustomAuthService = context.HttpContext.RequestServices.GetRequiredService<ICustomAuthService>();
+        var myCustomAuthService =
+            context.HttpContext.RequestServices.GetRequiredService<ICustomAuthService>();
 
         if (!await myCustomAuthService.CheckIfAllowed(condition))
         {

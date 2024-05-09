@@ -4,7 +4,6 @@ namespace Sample.Filters.CustomAuthService;
 
 public class CustomAuthService(IHttpContextAccessor contextAccessor) : ICustomAuthService
 {
-
     public Task<bool> CheckIfAllowed(string condition)
     {
         //TODO Add your custom pocily
